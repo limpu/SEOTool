@@ -1,0 +1,31 @@
+allowBuilds:
+  esbuild: true
+  sharp: false
+  unrs-resolver: false
+# Phase 32 (Security Audit): pnpm audit flagged esbuild <=0.24.2 (GHSA-67mh-
+# 4wv8-2f99 — "esbuild enables any website to send any requests to the
+# development server and read the response") pulled in transitively via
+# drizzle-kit's deprecated @esbuild-kit/esm-loader dependency. drizzle-kit
+# itself is already pinned to its latest stable (0.31.10, dev-only tool,
+# never bundled/shipped) — the vulnerable esbuild is three levels deep and
+# not something a drizzle-kit version bump alone resolves. Forcing every
+# resolved esbuild copy to a patched version via this override is a safe,
+# non-disruptive fix (esbuild's dev-server-CORS issue only matters if
+# esbuild's own dev server is exposed, which nothing in this project does —
+# it's used here purely as drizzle-kit/tsx/vite's internal bundler).
+overrides:
+  esbuild: '>=0.24.3'
+minimumReleaseAgeExclude:
+  - '@next/env@16.3.2'
+  - '@next/swc-darwin-arm64@16.3.2'
+  - '@next/swc-darwin-x64@16.3.2'
+  - '@next/swc-linux-arm64-gnu@16.3.2'
+  - '@next/swc-linux-arm64-musl@16.3.2'
+  - '@next/swc-linux-x64-gnu@16.3.2'
+  - '@next/swc-linux-x64-musl@16.3.2'
+  - '@next/swc-win32-arm64-msvc@16.3.2'
+  - '@next/swc-win32-x64-msvc@16.3.2'
+  - next@16.3.2
+  - '@next/eslint-plugin-next@16.3.2'
+  - eslint-config-next@16.3.2
+  - eslint@10.9.0

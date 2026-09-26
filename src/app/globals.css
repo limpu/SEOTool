@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ *  AI SEO INTELLIGENCE PLATFORM — DESIGN TOKENS (single source of truth)
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * DESIGN PHILOSOPHY: "neutral chrome, colourful data."
+ * This is a data-dense analytics product. The UI chrome stays quiet
+ * (slate neutrals + a near-black primary) so that charts, scores and status
+ * signals are the only genuinely colourful things on screen. Every colour in
+ * the product is defined HERE and referenced by ROLE — never hard-code a hex
+ * or a raw Tailwind palette class (`bg-slate-900`, `text-red-600`, …) in a
+ * component. If you need a colour that isn't a role below, add the role here
+ * first.
+ *
+ * TOKEN LAYERS
+ *   1. Neutral ramp      — the slate scale the whole chrome is built from
+ *   2. Semantic UI roles — surface/ink/border/primary/accent/destructive…
+ *   3. Status            — good / warning / serious / critical (RESERVED)
+ *   4. Charts            — categorical + sequential data palette
+ *
+ * LIGHT MODE ONLY. Every surface in this app is a white card on a light
+ * plane; there is no dark theme. These tokens are deliberately NOT redefined
+ * under `prefers-color-scheme: dark` — a half-supported dark mode (dark body
+ * behind white cards) is worse than none. Adding dark mode later means
+ * re-stepping every ramp below against the dark surface and re-validating the
+ * chart palette's contrast, not flipping values.
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── 1. Neutral ramp (slate) ─────────────────────────────────────────── */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+
+  /* ─── 2. Semantic UI roles ────────────────────────────────────────────── */
+
+  /* Planes & surfaces */
+  --background: var(--slate-50);   /* the page plane behind cards          */
+  --surface: #ffffff;              /* card / panel / table surface         */
+  --surface-subtle: var(--slate-50); /* table header, inset wells          */
+  --surface-hover: var(--slate-100); /* row / ghost-button hover           */
+
+  /* Ink — text ALWAYS wears one of these, never a series or status colour */
+  --foreground: var(--slate-900);       /* headings, primary values        */
+  --foreground-secondary: var(--slate-600); /* body copy                   */
+  --foreground-muted: var(--slate-400);  /* labels, captions, axis ticks   */
+
+  /* Lines */
+  --border: var(--slate-200);      /* card borders, table rules            */
+  --border-strong: var(--slate-300); /* input borders                      */
+
+  /* Primary action — deliberately a NEAR-BLACK, not a brand hue. It can
+     never be mistaken for a data series or a status signal, which is the
+     whole point in a product where colour carries meaning. */
+  --primary: var(--slate-900);
+  --primary-hover: var(--slate-800);
+  --primary-foreground: #ffffff;
+  --primary-disabled: var(--slate-400);
+
+  /* Accent — the one interactive hue: links, focus rings, active nav.
+     Same blue family as chart categorical slot 1, so interactive chrome and
+     data read as one system rather than two unrelated palettes. */
+  --accent: #2a78d6;
+  --accent-hover: #256abf;
+  --accent-subtle: #eff6ff;
+  --accent-foreground: #ffffff;
+
+  /* Focus ring — accessibility-critical, always visible, never removed */
+  --ring: var(--accent);
+
+  /* Destructive — irreversible actions (delete website / delete account).
+     Distinct from status-critical: this is an ACTION colour, that is a
+     MEASUREMENT colour. They are allowed to look similar; they are not
+     allowed to be the same token. */
+  --destructive: #dc2626;
+  --destructive-hover: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --destructive-subtle: #fef2f2;
+  --destructive-border: #fecaca;
+  --destructive-disabled: #fca5a5;
+
+  /* Inferred — content an AI MODEL produced, as opposed to a deterministic
+     rule engine or a measured API response. This is a PROVENANCE role, not a
+     verdict: it says "a model wrote this", never "this is good or bad", so it
+     is deliberately outside the status ramp and outside the chart palette.
+     The product's honesty rules turn on exactly this distinction, so it earns
+     a role of its own rather than borrowing the accent (which means
+     "interactive") or a status hue (which would imply a measurement).
+     Violet, the one family neither the accent nor any status role uses; it is
+     the same hue as chart slot 7, which never coincides with a status mark. */
+  --inferred: #5b47b0;
+  --inferred-subtle: #f5f3fc;
+  --inferred-border: #d9d2f0;
+
+  /* Radius scale */
+  --radius-sm: 0.375rem;
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* ─── 3. Status — RESERVED ────────────────────────────────────────────── */
+  /* Never reused as a chart series colour, and ALWAYS shipped with an icon +
+     text label so colour is never the sole carrier of meaning (two of these
+     sit below 3:1 on a white surface by design — the label is the fix). */
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+
+  /* Tinted backgrounds for status pills/alerts */
+  --status-good-subtle: #ecfdf5;
+  --status-warning-subtle: #fffbeb;
+  --status-serious-subtle: #fff7ed;
+  --status-critical-subtle: #fef2f2;
+
+  /* Deltas: an improvement is green, a regression is red — but note some
+     metrics are INVERTED (a falling search Position is an improvement), so
+     direction is decided in code, never assumed from the raw sign. */
+  --delta-up: #006300;
+  --delta-down: #b91c1c;
+  --delta-flat: var(--slate-500);
+
+  /* ─── 4. Chart palette ────────────────────────────────────────────────── */
+  /* Categorical: assigned in this FIXED order and never cycled. Colour
+     follows the entity, never its rank, so filtering a series must not
+     repaint the survivors. There is deliberately no 9th colour — past 8
+     meaningful categories, use a table instead of inventing hues. */
+  --chart-cat-1: #2a78d6; /* blue    */
+  --chart-cat-2: #eb6834; /* orange  */
+  --chart-cat-3: #1baf7a; /* aqua    */
+  --chart-cat-4: #eda100; /* yellow  */
+  --chart-cat-5: #e87ba4; /* magenta */
+  --chart-cat-6: #008300; /* green   */
+  --chart-cat-7: #4a3aa7; /* violet  */
+  --chart-cat-8: #e34948; /* red     */
+
+  /* Sequential — ONE hue, light → dark, for magnitude only. Never a rainbow. */
+  --chart-seq-1: #cde2fb;
+  --chart-seq-2: #b7d3f6;
+  --chart-seq-3: #9ec5f4;
+  --chart-seq-4: #86b6ef;
+  --chart-seq-5: #6da7ec;
+  --chart-seq-6: #5598e7;
+  --chart-seq-7: #3987e5;
+  --chart-seq-8: #2a78d6;
+  --chart-seq-9: #256abf;
+  --chart-seq-10: #1c5cab;
+  --chart-seq-11: #184f95;
+  --chart-seq-12: #104281;
+  --chart-seq-13: #0d366b;
+
+  /* Chart chrome — recessive by design */
+  --chart-grid: #e1e0d9;
+  --chart-axis: #c3c2b7;
+  --chart-surface: var(--surface); /* cuts the 2px gap between segments */
+}
+
+/* ─── Tailwind utility mapping ──────────────────────────────────────────────
+ * Exposes the roles above as utilities: `bg-surface`, `text-muted`,
+ * `border-default`, `bg-primary`, `text-status-critical`, `fill-chart-1`, …
+ * Use these; do not reach for `bg-slate-900` / `text-red-600` directly. */
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-DEFAULT: var(--radius);
+  --radius-lg: var(--radius-lg);
+
+  /* Surfaces & planes */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-hover: var(--surface-hover);
+
+  /* Ink */
+  --color-foreground: var(--foreground);
+  --color-muted: var(--foreground-muted);
+  --color-secondary-foreground: var(--foreground-secondary);
+
+  /* Lines */
+  --color-default: var(--border);
+  --color-strong: var(--border-strong);
+
+  /* Actions */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-disabled: var(--primary-disabled);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-hover: var(--destructive-hover);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-subtle: var(--destructive-subtle);
+  --color-destructive-border: var(--destructive-border);
+  --color-destructive-disabled: var(--destructive-disabled);
+
+  /* Provenance */
+  --color-inferred: var(--inferred);
+  --color-inferred-subtle: var(--inferred-subtle);
+  --color-inferred-border: var(--inferred-border);
+
+  /* Status */
+  --color-status-good: var(--status-good);
+  --color-status-warning: var(--status-warning);
+  --color-status-serious: var(--status-serious);
+  --color-status-critical: var(--status-critical);
+  --color-status-good-subtle: var(--status-good-subtle);
+  --color-status-warning-subtle: var(--status-warning-subtle);
+  --color-status-serious-subtle: var(--status-serious-subtle);
+  --color-status-critical-subtle: var(--status-critical-subtle);
+
+  /* Deltas */
+  --color-delta-up: var(--delta-up);
+  --color-delta-down: var(--delta-down);
+  --color-delta-flat: var(--delta-flat);
+
+  /* Charts */
+  --color-chart-1: var(--chart-cat-1);
+  --color-chart-2: var(--chart-cat-2);
+  --color-chart-3: var(--chart-cat-3);
+  --color-chart-4: var(--chart-cat-4);
+  --color-chart-5: var(--chart-cat-5);
+  --color-chart-6: var(--chart-cat-6);
+  --color-chart-7: var(--chart-cat-7);
+  --color-chart-8: var(--chart-cat-8);
+  --color-grid: var(--chart-grid);
+  --color-axis: var(--chart-axis);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Numeric columns and axis ticks must align vertically. Reserve this for
+   COLUMNS — large standalone figures keep proportional figures. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

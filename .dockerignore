@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.env
+.env.local
+*.log
+tests
+docs
+database/backups
+tsconfig.tsbuildinfo
+npm-debug.log*
+
+# Never bake an install token into an image — every container built from it
+# would ship the same operator credential.
+.install-token

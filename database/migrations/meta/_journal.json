@@ -1,0 +1,167 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1787347828565,
+      "tag": "0000_equal_miss_america",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1787349483812,
+      "tag": "0001_harsh_morbius",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1787354186915,
+      "tag": "0002_breezy_thunderbolt_ross",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1787355344471,
+      "tag": "0003_tiny_mojo",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1787387206032,
+      "tag": "0004_phase14_rbac_user_management",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1787389441745,
+      "tag": "0005_perfect_mesmero",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1787390139184,
+      "tag": "0006_simple_norrin_radd",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1787391017270,
+      "tag": "0007_fine_sally_floyd",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1787393058523,
+      "tag": "0008_fat_the_phantom",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1787407073433,
+      "tag": "0009_phase24_ai_search_intelligence",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1787408145378,
+      "tag": "0010_phase25_eeat_trust",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1787408245950,
+      "tag": "0011_phase25_eeat_category_enum",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1787409296776,
+      "tag": "0012_phase26_gsc",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1787410306192,
+      "tag": "0013_phase27_serp",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1787412003069,
+      "tag": "0015_phase29_llm_ai_integration",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1787442759240,
+      "tag": "0016_phase33_performance_indexes",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1787456715420,
+      "tag": "0017_phase36_ga4",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1787464347315,
+      "tag": "0018_user_dashboard_account_selfservice",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1787465607799,
+      "tag": "0019_profile_pending_email",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1787467828244,
+      "tag": "0020_wealthy_robin_chapel",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "7",
+      "when": 1787468000000,
+      "tag": "0021_remove_backlink_audit",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "7",
+      "when": 1788134400000,
+      "tag": "0022_phase37_site_file_content",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "7",
+      "when": 1788220800000,
+      "tag": "0023_web_installer_state",
+      "breakpoints": true
+    }
+  ]
+}

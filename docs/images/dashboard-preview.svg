@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="dbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="metricCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Browser Chrome Window Frame -->
+  <rect width="1000" height="560" rx="12" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Window Titlebar -->
+  <rect width="1000" height="42" rx="12" fill="#1e293b"/>
+  <rect width="1000" height="12" y="30" fill="#1e293b"/>
+  <circle cx="24" cy="21" r="6" fill="#ef4444"/>
+  <circle cx="44" cy="21" r="6" fill="#f59e0b"/>
+  <circle cx="64" cy="21" r="6" fill="#10b981"/>
+  
+  <!-- Browser Address Bar -->
+  <rect width="460" height="24" x="270" y="9" rx="6" fill="#0f172a" stroke="#334155"/>
+  <text x="350" y="25" fill="#94a3b8" font-family="sans-serif" font-size="11">https://seotool.local/dashboard</text>
+
+  <!-- App Header / Topbar inside -->
+  <rect width="1000" height="50" y="42" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+  <text x="30" y="73" fill="#38bdf8" font-family="sans-serif" font-size="16" font-weight="800">SEOTool</text>
+  <text x="96" y="73" fill="#e2e8f0" font-family="sans-serif" font-size="13" font-weight="600">Overview • example.com</text>
+
+  <!-- Left Sidebar Mockup -->
+  <rect width="200" height="468" y="92" fill="#0b0f19" stroke="#1e293b" stroke-width="1"/>
+  <g transform="translate(16, 116)" fill="#94a3b8" font-family="sans-serif" font-size="12">
+    <rect width="168" height="32" rx="6" fill="#1e293b"/>
+    <text x="14" y="20" fill="#38bdf8" font-weight="700">📊 Overview</text>
+    <text x="14" y="56">🕷️ Site Crawler</text>
+    <text x="14" y="88">🔍 Technical Audit</text>
+    <text x="14" y="120">🧠 AI Search (AEO)</text>
+    <text x="14" y="152">🛡️ E-E-A-T Score</text>
+    <text x="14" y="184">⚡ Core Web Vitals</text>
+    <text x="14" y="216">📈 Search Console</text>
+    <text x="14" y="248">🎯 Competitors</text>
+    <text x="14" y="280">🔑 Keyword Tracking</text>
+    <text x="14" y="312">📑 PDF Reports</text>
+  </g>
+
+  <!-- Main Content Area -->
+  <g transform="translate(224, 110)">
+    <!-- Metric 1: Health Score -->
+    <rect width="176" height="100" rx="8" fill="url(#metricCard)" stroke="#334155"/>
+    <text x="16" y="28" fill="#94a3b8" font-family="sans-serif" font-size="11" font-weight="600">SEO HEALTH SCORE</text>
+    <text x="16" y="68" fill="#34d399" font-family="sans-serif" font-size="32" font-weight="800">94<tspan font-size="16" fill="#64748b">/100</tspan></text>
+    <text x="16" y="88" fill="#10b981" font-family="sans-serif" font-size="11">▲ +6% from last crawl</text>
+
+    <!-- Metric 2: Pages Crawled -->
+    <g transform="translate(192, 0)">
+      <rect width="176" height="100" rx="8" fill="url(#metricCard)" stroke="#334155"/>
+      <text x="16" y="28" fill="#94a3b8" font-family="sans-serif" font-size="11" font-weight="600">PAGES CRAWLED</text>
+      <text x="16" y="68" fill="#38bdf8" font-family="sans-serif" font-size="32" font-weight="800">1,420</text>
+      <text x="16" y="88" fill="#94a3b8" font-family="sans-serif" font-size="11">0 Broken Links Found</text>
+    </g>
+
+    <!-- Metric 3: AEO Readiness -->
+    <g transform="translate(384, 0)">
+      <rect width="176" height="100" rx="8" fill="url(#metricCard)" stroke="#818cf8"/>
+      <text x="16" y="28" fill="#a78bfa" font-family="sans-serif" font-size="11" font-weight="600">AEO / AI READINESS</text>
+      <text x="16" y="68" fill="#c084fc" font-family="sans-serif" font-size="32" font-weight="800">89%</text>
+      <text x="16" y="88" fill="#a78bfa" font-family="sans-serif" font-size="11">ChatGPT &amp; Perplexity Ready</text>
+    </g>
+
+    <!-- Metric 4: Issues Detected -->
+    <g transform="translate(576, 0)">
+      <rect width="176" height="100" rx="8" fill="url(#metricCard)" stroke="#334155"/>
+      <text x="16" y="28" fill="#94a3b8" font-family="sans-serif" font-size="11" font-weight="600">OPEN ISSUES</text>
+      <text x="16" y="68" fill="#f43f5e" font-family="sans-serif" font-size="32" font-weight="800">3 <tspan font-size="16" fill="#94a3b8">crit</tspan></text>
+      <text x="16" y="88" fill="#f59e0b" font-family="sans-serif" font-size="11">12 warnings, 8 notices</text>
+    </g>
+
+    <!-- Lower Panel: Technical Audit Issues Feed -->
+    <g transform="translate(0, 120)">
+      <rect width="752" height="270" rx="8" fill="url(#metricCard)" stroke="#334155"/>
+      <text x="20" y="32" fill="#f8fafc" font-family="sans-serif" font-size="14" font-weight="700">Recent Crawl Audits &amp; Automated Fix Recommendations</text>
+
+      <!-- Row 1 -->
+      <g transform="translate(20, 52)">
+        <rect width="712" height="44" rx="6" fill="#0f172a" stroke="#1e293b"/>
+        <rect width="64" height="20" x="12" y="12" rx="4" fill="#ef4444" fill-opacity="0.2"/>
+        <text x="24" y="26" fill="#ef4444" font-family="sans-serif" font-size="10" font-weight="700">CRITICAL</text>
+        <text x="90" y="27" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="600">Missing canonical tag on 14 paginated category URLs</text>
+        <text x="630" y="27" fill="#38bdf8" font-family="sans-serif" font-size="11">View Fix →</text>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(20, 104)">
+        <rect width="712" height="44" rx="6" fill="#0f172a" stroke="#1e293b"/>
+        <rect width="64" height="20" x="12" y="12" rx="4" fill="#f59e0b" fill-opacity="0.2"/>
+        <text x="22" y="26" fill="#f59e0b" font-family="sans-serif" font-size="10" font-weight="700">WARNING</text>
+        <text x="90" y="27" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="600">No author schema (E-E-A-T) detected on blog publication pages</text>
+        <text x="630" y="27" fill="#38bdf8" font-family="sans-serif" font-size="11">View Fix →</text>
+      </g>
+
+      <!-- Row 3 -->
+      <g transform="translate(20, 156)">
+        <rect width="712" height="44" rx="6" fill="#0f172a" stroke="#1e293b"/>
+        <rect width="64" height="20" x="12" y="12" rx="4" fill="#818cf8" fill-opacity="0.2"/>
+        <text x="32" y="26" fill="#818cf8" font-family="sans-serif" font-size="10" font-weight="700">AEO</text>
+        <text x="90" y="27" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="600">AI Answerability Score: 64/100 — Missing direct answer summary snippet</text>
+        <text x="630" y="27" fill="#38bdf8" font-family="sans-serif" font-size="11">View Fix →</text>
+      </g>
+
+      <!-- Row 4 -->
+      <g transform="translate(20, 208)">
+        <rect width="712" height="44" rx="6" fill="#0f172a" stroke="#1e293b"/>
+        <rect width="64" height="20" x="12" y="12" rx="4" fill="#10b981" fill-opacity="0.2"/>
+        <text x="24" y="26" fill="#10b981" font-family="sans-serif" font-size="10" font-weight="700">PASSED</text>
+        <text x="90" y="27" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="500">Core Web Vitals LCP 1.4s, CLS 0.01 (100% Mobile &amp; Desktop Passed)</text>
+        <text x="630" y="27" fill="#10b981" font-family="sans-serif" font-size="11">Healthy ✓</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "crawl_runs_one_active_per_website" ON "crawl_runs" USING btree ("website_id") WHERE "crawl_runs"."status" IN ('pending', 'running');
