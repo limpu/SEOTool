@@ -18,7 +18,7 @@ export function Logo({
     <div className={`inline-flex items-center gap-2.5 font-bold tracking-tight text-foreground transition-opacity hover:opacity-90 ${className}`}>
       <div className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-lg shadow-sm" style={{ width: size, height: size }}>
         <Image
-          src="/icon.svg"
+          src="/icon.png"
           alt="SEOTool Logo"
           width={size}
           height={size}

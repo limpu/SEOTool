@@ -275,7 +275,7 @@ Contributions make the open-source community thrive! Any contributions you make 
 <table border="0">
   <tr>
     <td width="80" align="center">
-      <img src="public/icon.svg" width="60" height="60" alt="Atique Ullah" />
+      <img src="public/icon.png" width="60" height="60" alt="Atique Ullah" />
     </td>
     <td>
       <strong>Developed by Atique Ullah</strong><br />

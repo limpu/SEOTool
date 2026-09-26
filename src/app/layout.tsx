@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     "Production-grade, zero-paid-API autonomous SEO crawler, AI Answer Engine Optimization (AEO), Core Web Vitals, and deep technical auditing platform.",
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
     ],
-    apple: "/icon.svg",
+    apple: "/icon.png",
   },
   authors: [{ name: "Atique Ullah", url: "https://www.linkedin.com/in/atiqueullahlimon" }],
 };
